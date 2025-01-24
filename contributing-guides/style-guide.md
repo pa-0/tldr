@@ -65,7 +65,7 @@ Example:
 ```
 
 > [!NOTE]
-> The filename and page title must match the command name exactly. The page title can be present in any case, whereas the filenames must be lowercase.
+> The page's filename and title must match the command name exactly. The page title can be present in any case, whereas the page's Markdown filenames must be lowercase.
 
 There is a linter that enforces the format above.
 It is run automatically on every pull request,
@@ -97,13 +97,13 @@ Due to [various compatibility differences](https://learn.microsoft.com/powershel
 the command works on between **PowerShell 5.1** (aka. the "Legacy Windows PowerShell" as installed in Windows 10 
 and 11), and the **latest version of the Cross-Platform PowerShell** (formerly known as PowerShell Core).
 
-Thus, if the command or its options is unavailable or contains different behavior between each version, please kindly note them in the descriptions. For example:
+Thus, if the command or its options are unavailable or contain different behaviors between each version, please kindly note them in the descriptions. For example:
 
 ```md
 # Clear-RecycleBin
 
 > Clear items from the Recycle Bin.
-> This command can only be used through PowerShell versions 5.1 and below, or 7.1 and above.
+> Note: This command can only be used through PowerShell versions 5.1 and below, or 7.1 and above.
 > More information: <https://learn.microsoft.com/powershell/module/microsoft.powershell.management/clear-recyclebin>.
 ```
 
@@ -112,7 +112,7 @@ Thus, if the command or its options is unavailable or contains different behavio
 ### Platform differences
 
 If you are afraid the commands may differ between platforms or operating systems (e.g. Windows vs macOS),
-most [tldr pages clients](https://github.com/tldr-pages/tldr/wiki/tldr-pages-clients) will choose the most suitable version of the command to be displayed to the enduser.
+most [tldr pages clients](https://github.com/tldr-pages/tldr/wiki/Clients) will choose the most suitable version of the command to be displayed to the end user.
 
 In this case, the information of the Windows version of `cd` (stored in `pages/windows/cd.md`) will be displayed by default to Windows users, and a generic/common version (stored in `pages/common/cd.md`)
 will be displayed for Linux, macOS, and other platform users.
@@ -125,7 +125,6 @@ If a command can be called with alternative names (like `vim` can be called by `
 # command_name
 
 > This command is an alias of `original-command-name`.
-> More information: <https://example.com/original/command/help/page>.
 
 - View documentation for the original command:
 
@@ -278,7 +277,7 @@ Use backticks on the following:
 
 ### More information links
 
-- On the `More information` link line, we prefer linking to the author's provided documentation of the command line reference or the man page. When not available, use <https://manned.org> as the default fallback for all platforms
+- On the `More information` link line, we prefer linking to the author's provided documentation of the command-line reference or the man page. When not available, use <https://manned.org> as the default fallback for all platforms
 (except `osx` and BSD platforms other than FreeBSD).
 Alternatively, you can link to the author's website or a tutorial page if the command doesn't have a documentation page.
 
@@ -354,14 +353,14 @@ It should instead be simplified to make it easier for everyone to read:
 
 - Proper names should be capitalized in the description whenever applicable (e.g. use `A tool for interacting with a Git repository.` instead of ``A tool for interacting with a `git` repository.``).
 - Acronym expansions (i.e. protocols, tools, etc) must not be translated unless there is a recognized native equivalent for them.
--  When documenting keycaps or a keyboard shortcut for a utility, to make it stand out in the description:
+- When documenting keycaps or a keyboard shortcut for a utility, make it stand out in the description:
 
 1. If it is not translatable, enclose it with backticks (i.e. ``Print the last lines of a given file and keep reading it until `Ctrl + C`:``)
 2. If it is translatable, enclose it with double angled brackets inside a placeholder (i.e. ``:wq{{<<Enter>>}}``).
 
 ### Short option mnemonics
 
-Short option mnemonics are optional hints which can be added to help users understand the meaning of these short options. The assigned mnemonics should match with the ones in the command's official documentation (e.g. from `man` or `Get-Help`). For example:
+Short option mnemonics are optional hints that can be added to help users understand the meaning of these short options. The assigned mnemonics should match with the ones in the command's official documentation (e.g. from `man` or `Get-Help`). For example:
 
 ```md
 - [d]isplay the ins[t]allation [i]D for the current device. Useful for offline license activation:
@@ -394,7 +393,8 @@ For example, `[d]ownload` in English may be translated into `[d]escargar` in Spa
 
 - For commonly/frequently used commands (e.g. `grep`, `tar`, `etc`), we prefer using short options along with [mnemonics](#short-option-mnemonics) or both inside a placeholder.
 - For highlighting both long and short options in commands (instead of using mnemonics), combine them within a placeholder i.e. `{{-o|--output}}`.
-- For user-friendliness, use **GNU-style long options** (like `--help` rather than `-h`) when they are cross-platform compatible (intended to work the same across multiple platforms) for pages in `common` directory.
+- For user-friendliness, use **GNU-style long options** (like `--help` rather than `-h`) when they are cross-platform compatible (intended to work the same across multiple platforms) for pages in the `common` directory.
+- Prefer using a space instead of the equals sign (`=`) to separate options from their arguments (i.e. use `--opt arg` instead of `--opt=arg`), unless the program does not support it.
 
 ### Placeholder syntax
 
@@ -456,7 +456,7 @@ tells no info about whether items are mutually exclusive or not.
 
 #### Optional placeholders
 
-When documenting optional placeholders likes paths or file extensions, it is suggested to specify them in the page or example descriptions instead of the placeholder itself. For example:
+When documenting optional placeholders like paths or file extensions, it is suggested to specify them in the page or example descriptions instead of the placeholder itself. For example:
 
 - Use `{{path/to/source.ext}}` instead of `{{path/to/source.tar[.gz|.bz2|.xz]}}`.
 
@@ -468,11 +468,24 @@ When documenting optional placeholders likes paths or file extensions, it is sug
 
 ## Language-Specific Rules
 
-The below section contains additional language-specific rules for translating pages:
+The below section contains additional language-specific rules:
+
+### English-Specific Rules
+
+A normal hyphen (`-`) should be used in places where various style guides may recommend en dash (`–`) or em dash (`—`).
+
+- For example, use `for lengths 3-12` rather than `for lengths 3–12`
+
+The reason for this is four-fold:
+
+1. There is no widely accepted standard among various style guides on when each of these dashes should be used.
+2. Hyphen (`-`) is the only dash-like character in ASCII, which reduces the likelihood of compatibility issues.
+3. Hyphen (`-`) is by far the easiest to type.
+4. Many English speakers, especially non-native ones, are not aware of the difference.
 
 ### Chinese-Specific Rules
 
-When Chinese words, Latin words and Arabic numerals are written in the same sentence, more attention must be paid to copywriting.
+When Chinese words, Latin words, and Arabic numerals are written in the same sentence, more attention must be paid to copywriting.
 
 The following guidelines are applied to Chinese (`zh`) and traditional Chinese (`zh_TW`) pages:
 
@@ -500,7 +513,7 @@ The following guidelines are applied to Chinese (`zh`) and traditional Chinese (
 
 6. Use precise form for technical terms, and do not use unofficial Chinese abbreviations.
 
-- For example, use `Facebook` rather than `facebook`, `fb` or `脸书`.
+- For example, use `Facebook` rather than `facebook`, `fb`, or `脸书`.
 
 To maintain readability and normalization, please comply with the 6 rules above as much as possible when translating pages into Chinese.
 
@@ -561,7 +574,7 @@ Second, we recommend using the following forms of technical terms to make transl
 | Update | Perbarui | Do not confuse with `upgrade`. |
 | Upgrade | Tingkatkan | Do not confuse with `update`. |
 
-When translating sentences that contain the word `boot` and `load` together, please add the context of the item that is being booted and/or loaded, so the use of the `muat` word may not be ambiguous. For example, when translating:
+When translating sentences that contain the words `boot` and `load` together, please add the context of the item that is being booted and/or loaded, so the use of the `muat` word may not be ambiguous. For example, when translating:
 
 > Load configuration from a specific file after reboot
 

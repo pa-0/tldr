@@ -2,7 +2,7 @@
 
 > Remove arquivos ou diretórios.
 > Veja também: `rmdir`.
-> Mais informações: <https://www.gnu.org/software/coreutils/rm>.
+> Mais informações: <https://www.gnu.org/software/coreutils/manual/html_node/rm-invocation.html>.
 
 - Remove arquivos específicos:
 
@@ -23,3 +23,7 @@
 - Remove arquivos e diretórios específicos recursivamente:
 
 `rm --recursive {{caminho/para/arquivo_ou_diretório1 caminho/para/arquivo_ou_diretório2 ...}}`
+
+- Remove diretórios vazios (este é considerado o método seguro):
+
+`rm --dir {{caminho/para/diretório}}`

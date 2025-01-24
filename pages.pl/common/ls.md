@@ -1,7 +1,7 @@
 # ls
 
 > Wypisz zawartość katalogu.
-> Więcej informacji: <https://www.gnu.org/software/coreutils/ls>.
+> Więcej informacji: <https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html>.
 
 - Wypisz po jednym pliku w linijce:
 
@@ -15,19 +15,19 @@
 
 `ls -F`
 
-- Lista w długim formacie (uprawnienia, właściciel/ka, rozmiar i data modyfikacji) wszystkich plików:
+- Wypisz listę w długim formacie (uprawnienia, własność, rozmiar i data modyfikacji) wszystkich plików:
 
 `ls -la`
 
-- Lista w długim formacie z rozmiarem w jednostkach z przedrostkami dwójkowymi (KiB, MiB, GiB):
+- Wypisz listę w długim formacie z rozmiarem w jednostkach z przedrostkami dwójkowymi (KiB, MiB, GiB):
 
 `ls -lh`
 
-- Lista w długim formacie posortowana rozmiarem (malejąco):
+- Wypisz listę rekurencyjnie w długim formacie, posortowaną po rozmiarze (malejąco):
 
-`ls -lS`
+`ls -lSR`
 
-- Lista wszystkich plików w długim formacie posortowanych według daty modyfikacji (od najstarszych):
+- Wypisz listę wszystkich plików w długim formacie posortowaną według daty modyfikacji (od najstarszych):
 
 `ls -ltr`
 

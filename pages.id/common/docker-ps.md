@@ -1,7 +1,7 @@
 # docker ps
 
 > Tampilkan daftar kontainer Docker.
-> Informasi lebih lanjut: <https://docs.docker.com/engine/reference/commandline/ps/>.
+> Informasi lebih lanjut: <https://docs.docker.com/reference/cli/docker/container/ls/>.
 
 - Tampilkan kontainer Docker yang sedang berjalan saat ini:
 
@@ -17,7 +17,7 @@
 
 - Pilah kontainer yang mengandung substring dalam namanya:
 
-`docker ps --filter="name={{nama}}"`
+`docker ps --filter "name={{nama}}"`
 
 - Pilah kontainer yang memiliki gambar yang sama sebagai leluhur:
 
@@ -25,7 +25,7 @@
 
 - Pilah kontainer berdasarkan kode status keluar (exit status code):
 
-`docker ps --all --filter="exited={{kode}}"`
+`docker ps --all --filter "exited={{kode}}"`
 
 - Pilah kontainer berdasarkan status (created, running, removing, paused, exited, dan dead):
 
