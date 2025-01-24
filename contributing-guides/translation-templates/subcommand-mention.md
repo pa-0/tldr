@@ -152,7 +152,7 @@ Certaines sous-commandes comme `example command` ont leur propre documentation.
 ### id
 
 ```markdown
-Kami mempunyai dokumentasi terpisah untuk menggunakan subperintah seperti `example command`.
+Beberapa subperintah seperti `example command` mempunyai dokumentasi terpisah.
 ```
 
 ---
@@ -232,7 +232,7 @@ Niektóre podkomendy takie jak `example command` mają osobną dokumentację.
 ### pt_BR
 
 ```markdown
-Alguns subcomandos como `example command` tem sua própia documentação de uso.
+Alguns subcomandos como `example command` têm sua própria documentação de uso.
 ```
 
 ---
@@ -263,7 +263,10 @@ Unele subcomenzi precum `example command` au propria lor documentație de utiliz
 
 ### sh
 
-Not translated yet.
+```markdown
+Neke podkomande, kao što je `example command`, imaju svoju dokumentaciju za upotrebu.
+
+```
 
 ---
 

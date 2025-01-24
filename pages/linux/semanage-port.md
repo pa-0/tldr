@@ -2,7 +2,7 @@
 
 > Manage persistent SELinux port definitions.
 > See also: `semanage`.
-> More information: <https://manned.org/man/semanage-port>.
+> More information: <https://manned.org/semanage-port>.
 
 - List all port labeling rules:
 
@@ -15,6 +15,10 @@
 - Add a user-defined rule that assigns a label to a protocol-port pair:
 
 `sudo semanage port {{-a|--add}} {{-t|--type}} {{ssh_port_t}} {{-p|--proto}} {{tcp}} {{22000}}`
+
+- Add a user-defined rule that assigns a label to a protocol-port-range pair:
+
+`sudo semanage port {{-a|--add}} {{-t|--type}} {{http_port_t}} {{-p|--proto}} {{tcp}} {{80-88}}`
 
 - Delete a user-defined rule using its protocol-port pair:
 

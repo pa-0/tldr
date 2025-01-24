@@ -1,9 +1,9 @@
 # nuclei
 
 > Fast and customizable vulnerability scanner based on a simple YAML based DSL.
-> More information: <https://github.com/projectdiscovery/nuclei>.
+> More information: <https://docs.projectdiscovery.io/tools/nuclei/overview>.
 
-- [u]pdate `nuclei` [t]emplates to the latest released version:
+- [u]pdate `nuclei` [t]emplates to the latest released version (will be downloaded to `~/nuclei-templates`):
 
 `nuclei -ut`
 
@@ -33,4 +33,4 @@
 
 - Run scan based on one or more [t]emplate [c]onditions:
 
-`nuclei -tc {{"contains(tags, 'xss') && contains(tags, 'cve')"}} -u {{https://vulnerable.website}}`
+`nuclei -tc "{{contains(tags, 'xss') && contains(tags, 'cve')}}" -u {{https://vulnerable.website}}`

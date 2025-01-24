@@ -65,7 +65,7 @@ Example:
 ```
 
 > [!NOTE]
-> The filename and page title must match the command name exactly. The page title can be present in any case, whereas the filenames must be lowercase.
+> The page's filename and title must match the command name exactly. The page title can be present in any case, whereas the page's Markdown filenames must be lowercase.
 
 There is a linter that enforces the format above.
 It is run automatically on every pull request,
@@ -112,7 +112,7 @@ Thus, if the command or its options are unavailable or contain different behavio
 ### Platform differences
 
 If you are afraid the commands may differ between platforms or operating systems (e.g. Windows vs macOS),
-most [tldr pages clients](https://github.com/tldr-pages/tldr/wiki/tldr-pages-clients) will choose the most suitable version of the command to be displayed to the end user.
+most [tldr pages clients](https://github.com/tldr-pages/tldr/wiki/Clients) will choose the most suitable version of the command to be displayed to the end user.
 
 In this case, the information of the Windows version of `cd` (stored in `pages/windows/cd.md`) will be displayed by default to Windows users, and a generic/common version (stored in `pages/common/cd.md`)
 will be displayed for Linux, macOS, and other platform users.
@@ -125,7 +125,6 @@ If a command can be called with alternative names (like `vim` can be called by `
 # command_name
 
 > This command is an alias of `original-command-name`.
-> More information: <https://example.com/original/command/help/page>.
 
 - View documentation for the original command:
 
@@ -240,7 +239,7 @@ use a [serial comma](https://en.wikipedia.org/wiki/Serial_comma),
 also known as the Oxford comma,
 since omitting it can create ambiguity.
 
-> Delete the Git branches, tags, and remotes.
+> Delete the Git branches, tags and remotes.
 
 The example above does not use a serial comma, so this could mean one of two things:
 
@@ -278,7 +277,7 @@ Use backticks on the following:
 
 ### More information links
 
-- On the `More information` link line, we prefer linking to the author's provided documentation of the command line reference or the man page. When not available, use <https://manned.org> as the default fallback for all platforms
+- On the `More information` link line, we prefer linking to the author's provided documentation of the command-line reference or the man page. When not available, use <https://manned.org> as the default fallback for all platforms
 (except `osx` and BSD platforms other than FreeBSD).
 Alternatively, you can link to the author's website or a tutorial page if the command doesn't have a documentation page.
 
@@ -337,7 +336,7 @@ the part of the address that starts with `?view=`.
 
 - Avoid using the page title in the description (e.g. use `A sketching and painting program designed for digital artists` instead of `Krita is a sketching and painting program designed for digital artists`)
 unless the program name differs from the executable name (e.g. `rg` and Ripgrep).
-- Avoid mentioning that the program is used on the command line (e.g. use `Ripgrep is a recursive line-oriented search tool` instead of `Ripgrep is a recursive line-oriented CLI search tool`).
+- Avoid mentioning that the program is used on the command-line (e.g. use `Ripgrep is a recursive line-oriented search tool` instead of `Ripgrep is a recursive line-oriented CLI search tool`).
 - For example, when writing documentation for `cd`, a tool to check out and work on a specific directory in the Terminal or Command Prompt, **do not** write a lengthy description such as:
 
 ```md
@@ -395,6 +394,7 @@ For example, `[d]ownload` in English may be translated into `[d]escargar` in Spa
 - For commonly/frequently used commands (e.g. `grep`, `tar`, `etc`), we prefer using short options along with [mnemonics](#short-option-mnemonics) or both inside a placeholder.
 - For highlighting both long and short options in commands (instead of using mnemonics), combine them within a placeholder i.e. `{{-o|--output}}`.
 - For user-friendliness, use **GNU-style long options** (like `--help` rather than `-h`) when they are cross-platform compatible (intended to work the same across multiple platforms) for pages in the `common` directory.
+- Prefer using a space instead of the equals sign (`=`) to separate options from their arguments (i.e. use `--opt arg` instead of `--opt=arg`), unless the program does not support it.
 
 ### Placeholder syntax
 
@@ -468,7 +468,20 @@ When documenting optional placeholders like paths or file extensions, it is sugg
 
 ## Language-Specific Rules
 
-The below section contains additional language-specific rules for translating pages:
+The below section contains additional language-specific rules:
+
+### English-Specific Rules
+
+A normal hyphen (`-`) should be used in places where various style guides may recommend en dash (`–`) or em dash (`—`).
+
+- For example, use `for lengths 3-12` rather than `for lengths 3–12`
+
+The reason for this is four-fold:
+
+1. There is no widely accepted standard among various style guides on when each of these dashes should be used.
+2. Hyphen (`-`) is the only dash-like character in ASCII, which reduces the likelihood of compatibility issues.
+3. Hyphen (`-`) is by far the easiest to type.
+4. Many English speakers, especially non-native ones, are not aware of the difference.
 
 ### Chinese-Specific Rules
 

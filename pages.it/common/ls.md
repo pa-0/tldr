@@ -1,7 +1,7 @@
 # ls
 
 > Elenca i contenuti di una directory.
-> Maggiori informazioni: <https://www.gnu.org/software/coreutils/ls>.
+> Maggiori informazioni: <https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html>.
 
 - Elenca i file nella directory corrente, uno per riga:
 
@@ -25,7 +25,7 @@
 
 - Elenca tutti i file e mostra informazioni, ordinandoli per dimensione decrescente:
 
-`ls -lS`
+`ls -lSR`
 
 - Elenca tutti i file e mostra informazioni, ordinandoli per data di ultima modifica (i più vecchi prima):
 
