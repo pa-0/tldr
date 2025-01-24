@@ -1,7 +1,7 @@
 # chown
 
 > Verander gebruiker- en groepsbeheer van bestanden en mappen.
-> Meer informatie: <https://www.gnu.org/software/coreutils/chown>.
+> Meer informatie: <https://www.gnu.org/software/coreutils/manual/html_node/chown-invocation.html>.
 
 - Verander gebruikkersbeheerder van een bestand/map:
 
@@ -25,4 +25,4 @@
 
 - Verander de beheerder van een bestand of map naar dezelfde als een referentiebestand:
 
-`chown --reference={{pad/naar/referentiebestand}} {{pad/naar/bestand_of_map}}`
+`chown --reference {{pad/naar/referentiebestand}} {{pad/naar/bestand_of_map}}`

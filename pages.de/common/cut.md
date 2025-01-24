@@ -1,7 +1,7 @@
 # cut
 
 > Schneide Felder von `stdin` oder einer Datei aus.
-> Weitere Informationen: <https://www.gnu.org/software/coreutils/cut>.
+> Weitere Informationen: <https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html>.
 
 - Schneide bestimmte Zeichen oder einen Bereich von Feldern jeder Zeile aus:
 
@@ -9,7 +9,7 @@
 
 - Schneide einen bestimmten Bereich von Feldern jeder Zeile mit einem bestimmten Trennzeichen aus:
 
-`{{befehl}} | cut --delimiter="{{,}}" --fields {{1}}`
+`{{befehl}} | cut --delimiter "{{,}}" --fields {{1}}`
 
 - Schneide einen bestimmten Bereich von Zeichen jeder Zeile einer bestimmten Datei aus:
 

@@ -24,6 +24,14 @@
 
 `tldr --update`
 
-- List all pages for the current platform and `common`:
+- [l]ist all pages for the current platform and `common`:
 
 `tldr --list`
+
+- [l]ist all available subcommand pages for a command:
+
+`tldr --list | grep {{command}} | column`
+
+- Print the tldr page for a random command:
+
+`tldr --list | shuf -n1 | xargs tldr`

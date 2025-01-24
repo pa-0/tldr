@@ -1,7 +1,7 @@
 # acme.sh
 
 > Shell-script dat het ACME-clientprotocol implementeert, een alternatief voor `certbot`.
-> Zie ook `acme.sh dns`.
+> Bekijk ook `acme.sh dns`.
 > Meer informatie: <https://github.com/acmesh-official/acme.sh>.
 
 - Geef een certificaat uit met behulp van de webroot-modus:
@@ -30,4 +30,4 @@
 
 - Installeer certificaatbestanden op de opgegeven locaties (handig voor automatische certificaatvernieuwing):
 
-`acme.sh --install-cert -d {{voorbeeld.com}} --key-file {{/pad/naar/voorbeeld.com.key}} --fullchain-file {{/pad/naar/voorbeeld.com.cer}} --reloadcmd {{"systemctl force-reload nginx"}}`
+`acme.sh --install-cert -d {{voorbeeld.com}} --key-file {{/pad/naar/voorbeeld.com.key}} --fullchain-file {{/pad/naar/voorbeeld.com.cer}} --reloadcmd "{{systemctl force-reload nginx}}"`
