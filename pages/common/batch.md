@@ -1,8 +1,13 @@
 # batch
 
 > Execute commands at a later time when the system load levels permit.
-> Service atd (or atrun) should be running for the actual executions.
+> Results will be sent to the user's mail.
+> See also: `at`, `atq`, `atrm` `mail`.
 > More information: <https://manned.org/batch>.
+
+- Start the `atd` daemon:
+
+`systemctl start atd`
 
 - Execute commands from `stdin` (press `Ctrl + D` when done):
 
@@ -11,7 +16,3 @@
 - Execute a command from `stdin`:
 
 `echo "{{./make_db_backup.sh}}" | batch`
-
-- Execute commands from a given [f]ile:
-
-`batch -f {{path/to/file}}`

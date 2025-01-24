@@ -2,7 +2,7 @@
 
 > 파일 또는 디렉터리 삭제.
 > 같이 보기: `rmdir`.
-> 더 많은 정보: <https://www.gnu.org/software/coreutils/rm>.
+> 더 많은 정보: <https://www.gnu.org/software/coreutils/manual/html_node/rm-invocation.html>.
 
 - 특정 파일 삭제:
 
@@ -23,3 +23,7 @@
 - 특정 파일 및 디렉터리를 재귀적으로 삭제:
 
 `rm --recursive {{경로/대상/파일_또는_폴더1 경로/대상/파일_또는_폴더2 ...}}`
+
+- 빈 디렉토리 제거 (안전한 방법으로 간주됨):
+
+`rm --dir {{경로/대상/폴더}}`
